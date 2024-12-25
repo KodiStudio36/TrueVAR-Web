@@ -1,0 +1,25 @@
+{% macro footer(item) -%}
+<div class="shop-footer">
+    <p>
+        <b>{{ item.name }}</b><br>
+        <span onclick="addToCart('{{ item.id }}')">add to cart</span>
+
+    </p>
+    <script>
+        function addToCart(id) {
+            var xhr = new XMLHttpRequest();
+            var url = "/cart/add-to-cart";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.email + ", " + json.password);
+                }
+            };
+            var data = JSON.stringify({ "id": id });
+            xhr.send(data);
+        }
+    </script>
+</div>
+{% endmacro %}

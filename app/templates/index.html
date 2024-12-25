@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import 'contact/comps.html' as contact %}
+
+{% block content %}
+<span class="title">
+    <h1>{% block title %} The Home Page of FlaskApp {% endblock %}</h1>
+</span>
+<div class="content">
+    <h2>This is the main Flask blueprint</h2>
+</div>
+{{ contact.form("") }}
+{% endblock %}
