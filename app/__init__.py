@@ -11,7 +11,6 @@ from app.models.user import User
 from app.models.authentication import Authentication
 from app.models.submission import Submission
 from app.models.licence import Licence
-from app.models.shop_item import ShopItem
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -24,12 +23,6 @@ def create_app(config_class=Config):
     # Register blueprints here
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
-
-    from app.shop import bp as shop_bp
-    app.register_blueprint(shop_bp, url_prefix='/shop')
-
-    from app.cart import bp as cart_bp
-    app.register_blueprint(cart_bp, url_prefix='/cart')
 
     from app.contact import bp as contact_bp
     app.register_blueprint(contact_bp, url_prefix='/contact')
@@ -44,15 +37,7 @@ def create_app(config_class=Config):
     def create_tables():
         print("Creating tables...")
         db.create_all()
-        populate()
         print("Tables created successfully.")
-
-    def populate():
-        db.session.add(ShopItem("ShopItem1", 85.3, "/shop/shopitem1"))
-        db.session.add(ShopItem("ShopItem2", 85.3))
-        db.session.add(ShopItem("ShopItem3", 85.3, "/shop/shopitem3"))
-
-        db.session.commit()
 
     @app.cli.command("user")
     @with_appcontext
