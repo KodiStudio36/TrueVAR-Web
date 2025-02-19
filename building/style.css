@@ -5,6 +5,8 @@
     scroll-behavior: smooth;
 
     --border-radius: 2px;
+    --padding: 10vw;
+    --title: 3rem;
 }
 
 body {
@@ -100,17 +102,18 @@ nav .logo span {
 
 .hero .text {
     position: absolute;
-    top: 30%;
+    top: 20vh;
     left: 0px;
     border-radius: var(--border-radius);
     display: flex;
     gap: 20px;
     flex-direction: column;
+    z-index: 100;
 }
 
 .hero .text .title {
-    font-size: 4rem;
-    line-height: 4.4rem;
+    font-size: calc(var(--title) + 1rem);
+    line-height: calc(var(--title) + 1.4rem);
     font-weight: bold;
 }
 
@@ -215,7 +218,7 @@ nav .logo span {
 
 .content>.title {
     position: absolute;
-    font-size: 3rem;
+    font-size: var(--title);
     top: calc(200px - 3rem - 40px);
 }
 
@@ -237,7 +240,7 @@ nav .logo span {
 }
 
 .points .space {
-    height: 300px;
+    height: 25vw;
 }
 
 .video-container {
@@ -267,7 +270,7 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(55vw);
+    height: calc(200px + (100vw - var(--padding) - var(--padding) / 2 - var(--padding) / 2) / 3 * 2 / 16 * 9);
     z-index: 2;
 }
 
@@ -280,15 +283,20 @@ video {
     object-fit: cover;
 }
 
+
+.reviews .title {
+    font-size: var(--title);
+    margin-bottom: 20px;
+}
+
 .reviews .reviews-content {
     padding-block: 20px;
-    background-color: black;
 }
 
 .reviews .reviews-content .cards {
     display: flex;
     overflow-x: auto;
-    gap: 10px;
+    gap: 20px;
     scroll-behavior: smooth;
     white-space: nowrap;
 }
@@ -300,12 +308,38 @@ video {
 .reviews .reviews-content .card {
     display: flex;
     flex-direction: column;
-    flex: 0 1 auto;
-    min-width: 250px;
     width: fit-content;
-    max-width: none;
-    height: 150px;
+    height: fit-content;
     white-space: normal;
+}
+
+.reviews .reviews-content .card .top {
+    height: 90px;
+    width: 300px;
+    gap: 20px;
+    display: inherit;
+}
+
+.reviews .reviews-content .card .title {
+    display: inherit;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.reviews .reviews-content .card .name {
+    font-size: 1.2rem;
+}
+
+.reviews .reviews-content .card .degree {
+    font-size: 0.8rem;
+}
+
+.reviews .reviews-content .card .pic {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 
@@ -332,7 +366,7 @@ video {
 }
 
 .reviews .space {
-    height: 100px;
+    height: 200px;
 }
 
 .reviews .instagram-container {
@@ -388,8 +422,7 @@ video {
 
 .contact {
     background-color: rgb(23, 23, 23);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 20px;
     padding: 24px;
 }
@@ -403,6 +436,7 @@ video {
 
 .contact .contact-content form,
 .contact .contact-content {
+    flex: 1;
     gap: 16px;
 }
 
@@ -421,6 +455,7 @@ video {
 }
 
 .contact .img {
+    flex: 1;
     position: relative;
     width: 100%;
 }
@@ -460,9 +495,6 @@ footer .divider {
     height: 1px;
     width: 100%;
 }
-
-
-
 
 
 
@@ -516,30 +548,92 @@ footer .divider {
     color: white;
 }
 
-@media (max-width: 1050px) {
+@media (min-width: 1051px) {
+    * {
+        --padding: 10vw;
+    }
+
+    .reviews>.youtube .youtube-video {
+        flex: 1;
+    }
+
     .padding {
-        padding-inline: 40px;
+        padding-inline: var(--padding);
     }
 
     .points {
-        padding-left: 40px;
+        padding-left: var(--padding);
+    }
+
+    .content {
+        gap: calc(var(--padding) / 2);
     }
 
     .content>.img {
-        margin-right: 40px;
+        margin-right: calc(var(--padding) / 2);
     }
 }
 
-@media (min-width: 1051px) {
+@media (max-width: 1050px) {
+    * {
+        --padding: 40px;
+    }
+
+    .reviews>.youtube .youtube-video {
+        flex: 2;
+    }
+
     .padding {
-        padding-inline: 10vw;
+        padding-inline: var(--padding);
     }
 
     .points {
-        padding-left: 10vw;
+        padding-left: var(--padding);
+    }
+
+    .content {
+        gap: calc(var(--padding) / 2);
     }
 
     .content>.img {
-        margin-right: 5vh;
+        margin-right: calc(var(--padding) / 2);
+    }
+}
+
+@media (max-width: 825px) {
+    .contact .img {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .reviews>.youtube {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 725px) {
+    .cards {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    * {
+        --padding: 10px;
+        --title: 2rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .hero .text {
+        top: 10vh;
+    }
+}
+
+@media (max-height: 580px) {
+    .hero .text {
+        top: 10vh;
     }
 }
