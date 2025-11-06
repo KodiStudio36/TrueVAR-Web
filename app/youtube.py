@@ -227,7 +227,7 @@ def get_livestream_runtime_timestamp(broadcast_id):
     hours = total_seconds // 60 // 60
     minutes = total_seconds // 60 % 60
     seconds = total_seconds % 60
-    timestamp = f"{f"{hours}:" if hours > 0 else ""}{minutes:02d}:{seconds:02d}"
+    timestamp = (f"{hours}:" if hours > 0 else "") + f"{minutes:02d}:{seconds:02d}"
 
     return timestamp, total_seconds
 
