@@ -113,11 +113,16 @@ def create_tournament(user):
 
     for idx, file in enumerate(files_to_process, start=1):
         ext = file.filename.rsplit(".", 1)[-1].lower()
+        logging.info("here1")
         unique_name = f"{uuid.uuid4().hex}.{ext}"
+        logging.info("here2")
         save_path = os.path.join(UPLOAD_FOLDER, unique_name)
+        logging.info("here3")
         file.save(save_path)
+        logging.info("here4")
 
         thumbnail = Thumbnail(tournament.id, idx, unique_name)
+        logging.info("here5")
 
         db.session.add(thumbnail)
         db.session.commit()
