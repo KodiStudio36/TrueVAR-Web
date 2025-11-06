@@ -5,6 +5,8 @@ email_validator
 Flask-Mail
 bcrypt
 python-dotenv
+apscheduler
+pytz
 gunicorn
 google-api-python-client
 google-auth-httplib2
