@@ -1,4 +1,4 @@
-import os, uuid
+import os, uuid, logging
 from flask import render_template, request, redirect, url_for
 from datetime import datetime, timedelta
 from app.authenticate import authenticate_redirect
@@ -123,7 +123,7 @@ def create_tournament(user):
     now = datetime.utcnow()
     tomorrow_end = now + timedelta(days=1) + timedelta(days=1)
 
-    print("here", now, tomorrow_end, is_streaming and tournament.start <= tomorrow_end)
+    logging.info("here", now, tomorrow_end, is_streaming and tournament.start <= tomorrow_end)
 
     if is_streaming and tournament.start <= tomorrow_end:
         schedule_tournament(tournament)

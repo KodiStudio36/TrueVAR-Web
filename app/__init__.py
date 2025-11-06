@@ -1,7 +1,7 @@
 from flask import Flask
 from flask.cli import with_appcontext
 import click, bcrypt
-import uuid
+import uuid, logging
 from datetime import datetime
 
 from config import Config
@@ -26,6 +26,12 @@ def create_app(config_class=Config):
     # Initialize Flask extensions here
     db.init_app(app)
     mail.init_app(app)
+
+    logging.basicConfig(
+        filename='log.log',  # Specify the file name
+        level=logging.INFO,            # Set the minimum level to log (e.g., INFO, WARNING)
+        format='%(asctime)s - %(levelname)s - %(message)s' # Define the output format
+    )
 
     # Register blueprints here
     from app.main import bp as main_bp
