@@ -123,6 +123,8 @@ def create_tournament(user):
     now = datetime.utcnow()
     tomorrow_end = now + timedelta(days=1) + timedelta(days=1)
 
+    print("here", now, tomorrow_end, is_streaming and tournament.start <= tomorrow_end)
+
     if is_streaming and tournament.start <= tomorrow_end:
         schedule_tournament(tournament)
 
