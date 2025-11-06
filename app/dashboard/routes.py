@@ -125,14 +125,16 @@ def create_tournament(user):
         logging.info("here5")
 
         db.session.add(thumbnail)
+        logging.info("here6")
         db.session.commit()
+        logging.info("here7")
 
     now = datetime.utcnow()
     tomorrow_end = now + timedelta(days=1) + timedelta(days=1)
 
-    logging.info("here", now, tomorrow_end, is_streaming and tournament.start <= tomorrow_end)
 
     if is_streaming and tournament.start <= tomorrow_end:
+        logging.info("here8")
         schedule_tournament(tournament)
 
     return redirect(url_for("dashboard.dashboard"))
