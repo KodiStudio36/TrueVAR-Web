@@ -109,6 +109,8 @@ def create_tournament(user):
     db.session.add(tournament)
     db.session.commit()
 
+    logging.info("here")
+
     for idx, file in enumerate(files_to_process, start=1):
         ext = file.filename.rsplit(".", 1)[-1].lower()
         unique_name = f"{uuid.uuid4().hex}.{ext}"

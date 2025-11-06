@@ -1,5 +1,6 @@
 .venv/
 .env
+log.log
 client_secret.json
 youtube_token.pkl
 instance/database.db
