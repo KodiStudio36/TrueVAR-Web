@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+flask-wtf
+email_validator
+Flask-Mail
+bcrypt
+python-dotenv
+gunicorn
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib

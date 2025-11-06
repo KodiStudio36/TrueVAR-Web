@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Tournament</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        label {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create Tournament</h1>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Start Date:</label>
+        <input type="date" name="start_date" required>
+
+        <label>Start Time:</label>
+        <input type="time" name="start_time" required>
+
+        <label>Location:</label>
+        <input type="text" name="location" required>
+
+        <label>Court Number:</label>
+        <select name="court_num" required>
+            {% for licence in user.licences %}
+            <option value="{{ licence.court }}">{{ licence.court }}</option>
+            {% endfor %}
+        </select>
+
+        <label>
+            <input type="checkbox" name="is_streaming">
+            Streaming
+        </label>
+
+        <label>Upload Court Thumbnails (one per court):</label>
+        <input type="file" name="thumbnails" accept="image/*" multiple>
+
+        <button type="submit">Create</button>
+    </form>
+
+    <p><a href="{{ url_for('dashboard.dashboard') }}">← Back to Dashboard</a></p>
+
+</body>
+
+</html>

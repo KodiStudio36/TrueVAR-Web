@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'contact/comps.html' as contact %}
+
+{% block content %}
+<span class="title">
+    <h1>{% block title %} Contact {% endblock %}</h1>
+</span>
+<div class="contact">
+    <h2>Contact Blueprint</h2>
+
+    {{ contact.form("/contact") }}
+
+</div>
+{% endblock %}

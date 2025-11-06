@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="{{ url_for('static', filename='/scripts/script.js') }}" defer></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+    <title>TrueVAR | True to the rules, True to the game</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#"><img src="{{ url_for('static', filename='/images/logo.png') }}" alt="TrueVAR icon"></a>
+        </div>
+        <ul class="nav-links">
+            <!-- <li><a href="">Home</a></li>
+            <li><a href="/building/shop.html">Shop</a></li>
+            <li><a href="/building/about.html">About</a></li>
+            <li><a href="/building/contact.html">Contact</a></li> -->
+        </ul>
+        <div class="action">
+            <a href="#contact" class="cta">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="">
+        <div class="text padding">
+            <h1 class="title">Fair Decisions<br>Global Impact</h1>
+            <p class="undertitle">Bringing fair play to Taekwondo by cost effective<br>
+                easy to use ivr solution while expanding<br>
+                your audience with seamless livestreams</p>
+            <div class="action">
+                <a href="#contact" class="cta">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards padding">
+        <a href="#contact" class="card">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <h2 class="title">Your Tournament, Your Control</h2>
+                <p class="text">Take charge with our cutting-edge IVR and livestreaming system. Weather you're
+                    organizing local events or national championships, our easy-to-use solution is way to go.</p>
+                <span class="action-underline">Get in touch →</span>
+            </div>
+        </a>
+        <a href="#contact" class="card">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <h2 class="title">You Focus on the Fight, We Hnadle the Tech</h2>
+                <p class="text">Focus on the fights while we handle the rest. Our expert team provides full IVR and
+                    livestreaming services. From setup to execution, we've got you covered.</p>
+                <span class="action-underline">Get in touch →</span>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="content-space"></div>
+    <div class="content">
+        <div class="points">
+            <div class="space"></div>
+            <div class="point" data-index="0">
+                <h2 class="title" data-index="0">Ensuring Fair Play</h2>
+                <p class="text" data-index="0">Referees make split-second decisions, but with TrueVAR's Instant Video
+                    Replay, every
+                    critical moment is captured, reviewed, and verified in real-time. No more missed points or unfair
+                    calls—justice is just a click away.</p>
+            </div>
+            <div class="space"></div>
+            <div class="point" data-index="1">
+                <h2 class="title" data-index="1">Easy to use</h2>
+                <p class="text" data-index="1">Designed for referees, coaches, and event organizers, TrueVAR features a
+                    simple and
+                    intuitive control panel. Quick access to replays, easy navigation between matches, and an efficient
+                    review system make decision-making effortless.</p>
+            </div>
+            <div class="space"></div>
+            <div class="point" data-index="2">
+                <h2 class="title" data-index="2">Capture Every Angle</h2>
+                <p class="text" data-index="2">With support for up to 4 camera feeds, referees can switch perspectives
+                    instantly,
+                    ensuring no action goes unseen. Side, overhead, close-up—every crucial moment is covered from the
+                    best possible angle.</p>
+            </div>
+            <div class="space"></div>
+            <div class="point" data-index="3">
+                <h2 class="title" data-index="3">Seamless Livestream</h2>
+                <p class="text" data-index="3">Expand your audience with smooth, high-quality livestreaming, with
+                    integrated
+                    scoreboard. TrueVAR allows real-time
+                    video feed integration, ensuring fans, coaches, and families can follow the action without delay.
+                </p>
+            </div>
+            <div class="space"></div>
+            <div class="point" data-index="4">
+                <h2 class="title" data-index="4">From Local to International</h2>
+                <p class="text" data-index="4">Whether you're organizing a small club competition or a world-class
+                    championship.
+                    TrueVAR adapts to your needs. With scalable features and flexible setup options, it’s built to
+                    handle tournaments of any size, anywhere.</p>
+            </div>
+            <div style="height: 200px;"></div>
+        </div>
+        <div class="img">
+            <img src="{{ url_for('static', filename='/images/Image1.jpg') }}" alt="" data-index="0">
+            <img src="{{ url_for('static', filename='/images/Image2.jpg') }}" alt="" data-index="1">
+            <img src="{{ url_for('static', filename='/images/Image3.jpg') }}" alt="" data-index="2">
+            <img src="{{ url_for('static', filename='/images/Image4.jpg') }}" alt="" data-index="3">
+            <img src="{{ url_for('static', filename='/images/Image5.jpg') }}" alt="" data-index="4">
+        </div>
+        <h1 class="title padding">This is a headline oneliner</h1>
+        <h1 class="box-title padding">This is a headline oneliner</h1>
+        <div class="box-points" id="slider" onwheel="event.preventDefault()">
+            <div class="box-point">
+                <h2 class="title">Ensuring Fair Play</h2>
+                <p class="text">Referees make split-second decisions, but with TrueVAR's Instant Video Replay, every
+                    critical moment is captured, reviewed, and verified in real-time. No more missed points or unfair
+                    calls—justice is just a click away.</p>
+                <img src="{{ url_for('static', filename='/images/Image1.jpg') }}" alt="">
+            </div>
+            <div class="box-point">
+                <h2 class="title">Easy to use</h2>
+                <p class="text">Designed for referees, coaches, and event organizers, TrueVAR features a simple and
+                    intuitive control panel. Quick access to replays, easy navigation between matches, and an efficient
+                    review system make decision-making effortless.</p>
+                <img src="{{ url_for('static', filename='/images/Image2.jpg') }}" alt="">
+            </div>
+            <div class="box-point">
+                <h2 class="title">Capture Every Angle</h2>
+                <p class="text">With support for up to 4 camera feeds, referees can switch perspectives instantly,
+                    ensuring no action goes unseen. Side, overhead, close-up—every crucial moment is covered from the
+                    best possible angle.</p>
+                <img src="{{ url_for('static', filename='/images/Image3.jpg') }}" alt="">
+            </div>
+            <div class="box-point">
+                <h2 class="title">Seamless Livestream</h2>
+                <p class="text">Expand your audience with smooth, high-quality livestreaming, with integrated
+                    scoreboard. TrueVAR allows real-time
+                    video feed integration, ensuring fans, coaches, and families can follow the action without delay.
+                </p>
+                <img src="{{ url_for('static', filename='/images/Image4.jpg') }}" alt="">
+            </div>
+            <div class="box-point">
+                <h2 class="title">From Local to International</h2>
+                <p class="text">Whether you're organizing a small club competition or a world-class championship,
+                    TrueVAR adapts to your needs. With scalable features and flexible setup options, it’s built to
+                    handle tournaments of any size, anywhere.</p>
+                <img src="{{ url_for('static', filename='/images/Image5.jpg') }}" alt="">
+            </div>
+        </div>
+        <div class="slider-buttons">
+            <button class="slider-button" id="prev">❮</button>
+            <p id="box-count">1 / 5</p>
+            <button class="slider-button" id="next">❯</button>
+        </div>
+        <!-- <div class="gradient"></div> -->
+    </div>
+
+    <div class="reviews">
+        <div class="space"></div>
+        <!--<div class="reviews-content">
+            <h1 class="title padding">Our customers say</h1>
+            <div class="cards padding">
+                <div class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="top">
+                            <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="" class="pic">
+                            <div class="title">
+                                <h2 class="name">Name People</h2>
+                                <span class="degree">CEO of Apple</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aperiam voluptas
+                                consequuntur optio, quaerat sequi quas dignissimos, consequatur tempora eaque facere
+                                sapiente temporibus vero inventore. Repellendus et accusantium libero maxime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="top">
+                            <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="" class="pic">
+                            <div class="title">
+                                <h2 class="name">Name People</h2>
+                                <span class="degree">CEO of Apple</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aperiam voluptas
+                                consequuntur optio, quaerat sequi quas dignissimos, consequatur tempora eaque facere
+                                sapiente temporibus vero inventore. Repellendus et accusantium libero maxime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="top">
+                            <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="" class="pic">
+                            <div class="title">
+                                <h2 class="name">Name People</h2>
+                                <span class="degree">CEO of Apple</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aperiam voluptas
+                                consequuntur optio, quaerat sequi quas dignissimos, consequatur tempora eaque facere
+                                sapiente temporibus vero inventore. Repellendus et accusantium libero maxime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="top">
+                            <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="" class="pic">
+                            <div class="title">
+                                <h2 class="name">Name People</h2>
+                                <span class="degree">CEO of Apple</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aperiam voluptas
+                                consequuntur optio, quaerat sequi quas dignissimos, consequatur tempora eaque facere
+                                sapiente temporibus vero inventore. Repellendus et accusantium libero maxime!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>-->
+        <div class="youtube padding">
+            <div class="youtube-video">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_or7m45sguU?si=CBGPpJ1HkfyyWu4a"
+                    title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="text">
+                <h2 class="title">TrueVAR in Action</h2>
+                <p>Our livestreaming solution brings the excitement of live matches to audiences worldwide, ensuring
+                    fans never miss a moment. Whether watching from home or on the go, viewers get a clear and reliable
+                    broadcast of every match. Stay connected to the action and explore our previous livestreams to see
+                    TrueVAR in action.</p>
+            </div>
+        </div>
+        <div class="space"></div>
+    </div>
+
+    <div class="contact padding">
+        <div id="contact" style="position: absolute; top: -85px;"></div>
+        <div class="contact-content">
+            <h2 class="title">Contact Us</h2>
+            <form action="/contact/form" method="POST">
+                <div class="input-group">
+                    <input class="input" type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-group">
+                    <input class="input" type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <div class="input-textarea">
+                        <textarea id="message" name="message" placeholder=" " required></textarea>
+                    </div>
+                    <label for="message">Message</label>
+                </div>
+                <div class="action">
+                    <input class="cta" type="submit" value="Submit">
+
+                </div>
+            </form>
+
+            <span>or</span>
+
+            <div class="cards">
+                <a href="https://api.whatsapp.com/send?phone=421918215490" class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content" style="flex-direction: row; gap: 10px; align-items: center;">
+                        <i class="fa-brands fa-whatsapp"></i> Whatsapp
+                    </div>
+                </a>
+                <a id="phone-link" class="card">
+                    <div class="card-border"></div>
+                    <div class="card-content" style="flex-direction: row; gap: 10px; align-items: center;">
+                        +421 918 215 490
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="img">
+            <img src="{{ url_for('static', filename='/images/hero.jpg') }}" alt="">
+        </div>
+    </div>
+
+    <footer class="padding">
+        <div class="space"></div>
+        <div class="divider"></div>
+        <div class="space"></div>
+        <div class="grid">
+            <!--<div class="grid-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="grid-item right">
+                <span>span1</span>
+                <span>span2</span>
+            </div>
+            <div class="grid-item">
+                <i>icon1</i>
+                <i>icon1</i>
+                <i>icon1</i>
+                <i>icon1</i>
+                <i>icon1</i>
+            </div>-->
+            <div class="grid-item">
+                <span>Copyright © 2000-2025 TrueVAR</span>
+            </div>
+            <div class="grid-item right">
+                <span>Developed by Samuel Chudý</span>
+            </div>
+        </div>
+        <div class="space"></div>
+    </footer>
+
+</body>
+
+</html>
